@@ -8,4 +8,10 @@ public class PurchaseRequest {
     public List<PurchaseRequestItem> Items;
     public Employee Owner;
     public Employee Approver;
+
+    private PurchaseRequest(List<PurchaseRequestItem> items, Employee owner, Employee approver) {
+        this.Items = items;
+        this.Owner = owner;
+        this.Approver = approver;
+    }
 }
