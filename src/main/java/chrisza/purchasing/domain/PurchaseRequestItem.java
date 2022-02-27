@@ -4,6 +4,13 @@ import java.util.UUID;
 
 public class PurchaseRequestItem {
     private UUID Id;
+
+    public PurchaseRequestItem(String item, int amount, int totalPrice) {
+        Item = item;
+        Amount = amount;
+        TotalPrice = totalPrice;
+    }
+
     private String Item;
     private int Amount;
     private int TotalPrice;
