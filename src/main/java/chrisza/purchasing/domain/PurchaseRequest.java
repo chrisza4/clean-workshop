@@ -3,6 +3,8 @@ package chrisza.purchasing.domain;
 import java.util.List;
 import java.util.UUID;
 
+import org.checkerframework.checker.units.qual.radians;
+
 public class PurchaseRequest {
     private UUID id;
     private List<PurchaseRequestItem> Items;
@@ -45,5 +47,19 @@ public class PurchaseRequest {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    public Boolean isValid() {
+        if (Approver.level() == EmployeeLevel.Employee) {
+            return false;
+        }
+        var totalPrice = 0;
+        for (var item : this.Items) {
+            totalPrice += item.getTotalPrice();
+        }
+        if (totalPrice > 100000 && Approver.level() == EmployeeLevel.MidLevelManagement) {
+            return false;
+        }
+        return true;
     }
 }

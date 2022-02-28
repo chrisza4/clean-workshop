@@ -14,4 +14,16 @@ public class Employee {
     public void setEmailAddress(String emailAddress) {
         this.EmailAddress = emailAddress;
     }
+
+    public EmployeeLevel level() {
+        switch (this.EmailAddress) {
+            case "steve@microapplesoft.com":
+                return EmployeeLevel.MidLevelManagement;
+            case "mark@microapplesoft.com":
+                return EmployeeLevel.SeniorManagement;
+            default:
+                return EmployeeLevel.Employee;
+        }
+
+    }
 }
