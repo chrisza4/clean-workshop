@@ -25,8 +25,9 @@ public class PurchaseRequestUseCaseTest {
         var pr = PurchaseRequestFixtures.getValidPurchaseRequest();
         var mockRepo = new MockRepo();
         var useCase = new PurchaseRequestUseCase(mockRepo);
-        useCase.Create(pr);
+        var result = useCase.Create(pr);
         assertTrue(mockRepo.IsCreated);
+        assertEquals(result, pr);
     }
 
     private class MockRepo extends PurchaseRequestRepositoryImpl {

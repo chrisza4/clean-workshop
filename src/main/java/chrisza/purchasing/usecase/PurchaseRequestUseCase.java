@@ -16,7 +16,7 @@ public class PurchaseRequestUseCase {
             throw new InvalidPurchaseRequestException();
         }
         this.repo.Create(pr);
-        return null;
+        return pr;
     }
 
 }
