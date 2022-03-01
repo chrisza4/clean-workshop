@@ -3,9 +3,12 @@ package chrisza.purchasing.persistance;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import org.springframework.stereotype.Component;
+
 import chrisza.purchasing.domain.PurchaseRequest;
 import chrisza.purchasing.domain.dependencies.PurchaseRequestRepository;
 
+@Component
 public class PurchaseRequestRepositoryImpl implements PurchaseRequestRepository {
 
     private ArrayList<PurchaseRequest> purchaseRequests;

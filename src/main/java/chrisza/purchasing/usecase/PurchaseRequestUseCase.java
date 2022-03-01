@@ -1,13 +1,18 @@
 package chrisza.purchasing.usecase;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import chrisza.purchasing.domain.InvalidPurchaseRequestException;
 import chrisza.purchasing.domain.PurchaseRequest;
 import chrisza.purchasing.domain.dependencies.PurchaseRequestRepository;
 
+@Component
 public class PurchaseRequestUseCase {
-    private final PurchaseRequestRepository repo;
 
-    public PurchaseRequestUseCase(PurchaseRequestRepository repo) {
+    private PurchaseRequestRepository repo;
+
+    public PurchaseRequestUseCase(@Autowired PurchaseRequestRepository repo) {
         this.repo = repo;
     }
 
