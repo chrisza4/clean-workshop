@@ -7,6 +7,10 @@ public class Employee {
         EmailAddress = emailAddress;
     }
 
+    public Employee() {
+
+    }
+
     public String getEmailAddress() {
         return EmailAddress;
     }

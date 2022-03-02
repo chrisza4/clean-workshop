@@ -11,6 +11,10 @@ public class PurchaseRequestItem {
         TotalPrice = totalPrice;
     }
 
+    public PurchaseRequestItem() {
+
+    }
+
     private String Item;
     private int Amount;
     private int TotalPrice;

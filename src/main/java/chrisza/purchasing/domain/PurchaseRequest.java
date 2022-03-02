@@ -9,6 +9,10 @@ public class PurchaseRequest {
     private Employee Owner;
     private Employee Approver;
 
+    public PurchaseRequest() {
+
+    }
+
     public PurchaseRequest(List<PurchaseRequestItem> items, Employee owner, Employee approver) {
         this.setItems(items);
         this.setOwner(owner);

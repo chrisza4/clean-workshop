@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import chrisza.purchasing.domain.InvalidPurchaseRequestException;
 import chrisza.purchasing.domain.PurchaseRequest;
 import chrisza.purchasing.usecase.PurchaseRequestUseCase;
-import chrisza.purchasing.web.controllers.requests.CreatePurchaseRequestRequest;
 
 @RestController
 public class PurchaseRequestController {
@@ -16,10 +15,9 @@ public class PurchaseRequestController {
     private PurchaseRequestUseCase purchaseRequestUseCase;
 
     @PostMapping("/pr")
-    public ResponseEntity<PurchaseRequest> create(@RequestBody CreatePurchaseRequestRequest model) {
-        var pr = model.toDomainObject();
+    public ResponseEntity<PurchaseRequest> create(@RequestBody PurchaseRequest model) {
         try {
-            return new ResponseEntity<PurchaseRequest>(purchaseRequestUseCase.Create(pr), HttpStatus.ACCEPTED);
+            return new ResponseEntity<PurchaseRequest>(purchaseRequestUseCase.Create(model), HttpStatus.ACCEPTED);
         } catch (InvalidPurchaseRequestException e) {
             return new ResponseEntity<PurchaseRequest>(HttpStatus.FORBIDDEN);
         }
