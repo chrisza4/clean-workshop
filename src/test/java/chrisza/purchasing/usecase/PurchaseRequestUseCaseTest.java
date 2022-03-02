@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 
 import chrisza.purchasing.domain.InvalidPurchaseRequestException;
 import chrisza.purchasing.domain.PurchaseRequest;
-import chrisza.purchasing.domain.dependencies.PurchaseRequestRepository;
 import chrisza.purchasing.fixtures.PurchaseRequestFixtures;
 import chrisza.purchasing.persistance.PurchaseRequestRepositoryImpl;
 

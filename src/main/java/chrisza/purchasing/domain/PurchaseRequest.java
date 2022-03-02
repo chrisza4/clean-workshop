@@ -3,8 +3,6 @@ package chrisza.purchasing.domain;
 import java.util.List;
 import java.util.UUID;
 
-import org.checkerframework.checker.units.qual.radians;
-
 public class PurchaseRequest {
     private UUID id;
     private List<PurchaseRequestItem> Items;
